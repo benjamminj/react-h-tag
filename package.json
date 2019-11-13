@@ -13,7 +13,8 @@
     "start": "tsdx watch",
     "build": "tsdx build",
     "test": "tsdx test --env=jsdom",
-    "lint": "tsdx lint"
+    "lint": "tsdx lint",
+    "size": "yarn build && size-limit"
   },
   "peerDependencies": {
     "react": ">=16"
@@ -39,7 +40,7 @@
   "size-limit": [
     {
       "path": "dist/index.js",
-      "limit": "500 B"
+      "limit": "150 B"
     }
   ],
   "devDependencies": {

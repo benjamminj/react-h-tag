@@ -12,12 +12,12 @@ export let LevelContext = createContext(DEFAULT_HEADING_LEVEL)
 
 type HProps = HTMLProps<HTMLHeadingElement>
 
-export let H = ({ children, ...rest }: HProps) => {
+export let H = (props: HProps) => {
   let level = useContext(LevelContext)
 
   let tag = 'h' + Math.min(level, 6)
 
-  return createElement(tag, rest, children)
+  return createElement(tag, props, props.children)
 }
 
 type HLevelProps = { children: ReactNode }

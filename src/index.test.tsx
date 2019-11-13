@@ -9,10 +9,17 @@ describe('headings', () => {
     expect($h2.outerHTML).toEqual('<h2>content</h2>')
   })
 
+  test('allows passing props to the underlying h tag', () => {
+    let { container } = render(<H className="test">content</H>)
+    let $h2 = container.querySelector('h2') as HTMLElement
+    expect($h2.className).toEqual('test')
+  })
+
   test('renders dynamic heading levels', () => {
-    let { container, debug } = render(
+    let { container } = render(
       <div>
         <H>should be an h2</H>
+
         <HLevel>
           <H>should be an h3</H>
 
@@ -33,7 +40,7 @@ describe('headings', () => {
   })
 
   test("doesn't render past an h6", () => {
-    let { container, getByText } = render(
+    let { getByText } = render(
       <div>
         <HLevel>
           <HLevel>

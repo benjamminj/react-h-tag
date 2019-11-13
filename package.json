@@ -1,10 +1,10 @@
 {
-  "name": "react-heading",
-  "version": "0.1.0",
+  "name": "react-h-tag",
+  "version": "1.0.0",
   "license": "MIT",
   "author": "Benjamin Johnson",
   "main": "dist/index.js",
-  "module": "dist/react-heading.esm.js",
+  "module": "dist/react-h-tag.esm.js",
   "typings": "dist/index.d.ts",
   "files": [
     "dist"

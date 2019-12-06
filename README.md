@@ -38,7 +38,7 @@ function App() {
 }
 ```
 
-By default all `H` components will render as `<h2>` elements—in order to automatically increase heading levels all you need to do is wrap `H` in an `HLevel`.
+By default all `H` components will render as `<h2>` elements—to automatically increase heading levels all you need to do is wrap `H` in an `HLevel`.
 
 ```jsx
 import { H, HLevel } from 'react-h-tag'
@@ -93,3 +93,8 @@ function App() {
   )
 }
 ```
+
+## Prior Art
+## Contributing
+
+If you want to contribute 

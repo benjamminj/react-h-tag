@@ -6,24 +6,24 @@ import React, {
   useContext,
 } from 'react'
 
-let DEFAULT_HEADING_LEVEL = 2
+const DEFAULT_HEADING_LEVEL = 2
 
-export let LevelContext = createContext(DEFAULT_HEADING_LEVEL)
+export const LevelContext = createContext(DEFAULT_HEADING_LEVEL)
 
 type HProps = HTMLProps<HTMLHeadingElement>
 
-export let H = (props: HProps) => {
-  let level = useContext(LevelContext)
+export const H = (props: HProps) => {
+  const level = useContext(LevelContext)
 
-  let tag = 'h' + Math.min(level, 6)
+  const tag = 'h' + Math.min(level, 6)
 
   return createElement(tag, props, props.children)
 }
 
 type HLevelProps = { children: ReactNode }
 
-export let HLevel = ({ children }: HLevelProps) => {
-  let level = useContext(LevelContext)
+export const HLevel = ({ children }: HLevelProps) => {
+  const level = useContext(LevelContext)
 
   return (
     <LevelContext.Provider value={level + 1}>{children}</LevelContext.Provider>

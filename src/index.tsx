@@ -10,12 +10,12 @@ const DEFAULT_HEADING_LEVEL = 2
 
 export const LevelContext = createContext(DEFAULT_HEADING_LEVEL)
 
-type HProps = HTMLProps<HTMLHeadingElement>
+type HProps = HTMLProps<HTMLHeadingElement> & { increase?: number }
 
-export const H = (props: HProps) => {
+export const H = ({ increase = 0, ...props }: HProps) => {
   const level = useContext(LevelContext)
 
-  const tag = 'h' + Math.min(level, 6)
+  const tag = 'h' + Math.max(Math.min(level + increase, 6), 2)
 
   return createElement(tag, props, props.children)
 }

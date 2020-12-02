@@ -40,7 +40,11 @@
   "size-limit": [
     {
       "path": "dist/index.js",
-      "limit": "150 B"
+      "limit": "300 B"
+    },
+    {
+      "path": "dist/react-h-tag.esm.js",
+      "limit": "300 B"
     }
   ],
   "devDependencies": {

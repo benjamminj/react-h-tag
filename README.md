@@ -93,3 +93,31 @@ function App() {
   )
 }
 ```
+
+## Adjusting heading levels
+
+By default, you shouldn't have to worry much about your heading levels. Just drop `H` components throughout your app and they'll figure out what they need to be based on whether they're inside an `HLevel` context or not.
+
+However, occasionally you have two heading levels side by side, like in the following HTML:
+
+```html
+<div>
+  <h2>heading 2</h2>
+  <h3>heading 3</h3>
+</div>
+```
+
+As a convenience for these situations, you can use the `increase` prop to adjust the level of the current `H` tag
+
+```jsx
+<div>
+  <H>heading 2</H>
+  <H increase={1}>heading 3</H>
+</div>
+```
+
+## Trade-Offs & Caveats
+
+### `h1` tags
+
+By design, `react-h-tag` **does not allow you to create `h1` tags**. Since you should only have a single `h1` tag on your page, there isn't much need to dynamically figure out `h1` tags. This decisions helps you avoid accidentally shipping multiple `h1` tags and shooting yourself in the foot.
